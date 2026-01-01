@@ -1,0 +1,124 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>AlFati Store - Hoodies</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+    <div class="announcement-bar">
+    <div class="scroll-text">
+        📦 Free Delivery on Orders Over Rs.2,990/- | 🚚 Fast Shipping Across Pakistan
+    </div>
+    </div>
+
+    <header class="main-header">
+    <h1>🔥 AlFati Store - Hoodies 🔥</h1>
+    </header>
+
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="hoodies.html">Hoodies</a>
+    <a href="tshirts.html">T-Shirts</a>
+    </nav>
+
+    <div class="products">
+
+    <!-- PRODUCT 1 -->
+    <div class="product-card">
+        <img src="https://www.formulapk.com/cdn/shop/files/43.png?v=1703404484&width=600" alt="Mclaren Hoodie">
+        <div class="product-info">
+        <h3>Mclaren F1 Hoodie</h3>
+        <div class="price">Rs.2,550</div>
+        <div class="old-price">Rs.3,000</div>
+        <button class="add-cart" onclick="openOrderForm('Red Bull Racing F1 Hoodie')">Buy Now</button>
+        </div>
+    </div>
+
+    <!-- PRODUCT 2 -->
+    <div class="product-card">
+        <img src="https://www.formulapk.com/cdn/shop/files/15.png?v=1760107517&width=600" alt="Mercedes Hoodie">
+        <div class="product-info">
+        <h3>Mercedes F1 Hoodie</h3>
+        <div class="price">Rs.2,550</div>
+        <div class="old-price">Rs.3,300</div>
+        <button class="add-cart" onclick="openOrderForm('Red Bull Racing F1 Hoodie')">Buy Now</button>
+        </div>
+    </div>
+
+    <!-- PRODUCT 3 -->
+    <div class="product-card">
+        <img src="https://www.formulapk.com/cdn/shop/collections/fORMULA_PK_4.png?v=1751863556&width=1800" alt="Ferrari Hoodie">
+        <div class="product-info">
+        <h3>Ferrari F1 Hoodie</h3>
+        <div class="price">Rs.2,950</div>
+        <div class="old-price">Rs.3,500</div>
+        <button class="add-cart" onclick="openOrderForm('Red Bull Racing F1 Hoodie')">Buy Now</button>
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="https://www.formulapk.com/cdn/shop/files/6ABD4509-1750-4F82-94D1-BFECC2E30A00.png?v=1702226573&width=600" alt="RBR">
+        <div class="product-info">
+        <h3>RedBull Racing F1 Hoodie</h3>
+        <div class="price">Rs.2,950</div>
+        <div class="old-price">Rs.3,500</div>
+        <button class="add-cart" onclick="openOrderForm('Red Bull Racing F1 Hoodie')">Buy Now</button>
+        </div>
+    </div>
+
+    </div>
+<!-- ---------------- MODAL ---------------- -->
+<div class="modal" id="orderModal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h2 id="productTitle">Order Form</h2>
+    <form id="orderForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Shipping Address" rows="3" required></textarea>
+      <input type="number" placeholder="Quantity" min="1" value="1" required>
+      <button type="submit">Confirm Order</button>
+    </form>
+    <div class="confirmation" id="confirmationMsg">
+      ✅ Thank you! Your order has been confirmed.
+    </div>
+  </div>
+</div>
+<script>
+const modal = document.getElementById("orderModal");
+const closeBtn = document.getElementById("closeModal");
+const orderForm = document.getElementById("orderForm");
+const confirmationMsg = document.getElementById("confirmationMsg");
+const productTitle = document.getElementById("productTitle");
+
+
+function openOrderForm(productName) {
+  modal.style.display = "block";
+  productTitle.textContent = "Order: " + productName;
+  orderForm.style.display = "block";
+  confirmationMsg.style.display = "none";
+}
+
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if(event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+orderForm.addEventListener("submit", function(e){
+  e.preventDefault();
+  orderForm.style.display = "none";
+  confirmationMsg.style.display = "block";
+});
+</script>
+
+
+    <footer>
+    © 2025 AlFati Store. All Rights Reserved.
+    </footer>
+
+    </body>
+    </html>

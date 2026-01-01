@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AlFati Store - T-Shirts</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="announcement-bar">
+  <div class="scroll-text">
+    📦 Free Delivery on Orders Over Rs.2,990/- | 🚚 Fast Shipping Across Pakistan
+  </div>
+</div>
+
+<header class="main-header">
+  <h1>🔥 AlFati Store - T-Shirts 🔥</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="hoodies.html">Hoodies</a>
+  <a href="tshirts.html">T-Shirts</a>
+</nav>
+
+<div class="products">
+
+  <!-- PRODUCT 1 -->
+  <div class="product-card">
+    <img src="https://www.formulapk.com/cdn/shop/files/IMG_4858.heic?v=1766008921&width=600" alt="Ferrari Tee">
+    <div class="product-info">
+      <h3>Ferrari F1 Tee</h3>
+      <div class="price">Rs.2,000</div>
+      <div class="old-price">Rs.3,000</div>
+      <button class="add-cart" onclick="openOrderForm('Ferrari F1 Tee')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 2 -->
+  <div class="product-card">
+    <img src="https://www.formulapk.com/cdn/shop/files/IMG_2024.heic?v=1753281854&width=600" alt="Mercedes Tee">
+    <div class="product-info">
+      <h3>Mercedes Tee</h3>
+      <div class="price">Rs.2,200</div>
+      <div class="old-price">Rs.3,300</div>
+      <button class="add-cart" onclick="openOrderForm('Mercedes Tee')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 3 -->
+  <div class="product-card">
+    <img src="https://www.formulapk.com/cdn/shop/files/A5D1B04F-C779-443E-81B4-F85D17A7AEC9.png?v=1717764773&width=600" alt="Mclaren Tee">
+    <div class="product-info">
+      <h3>Mclaren F1 Tee</h3>
+      <div class="price">Rs.2,350</div>
+      <div class="old-price">Rs.3,500</div>
+      <button class="add-cart" onclick="openOrderForm('Mclaren F1 Tee')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT 4 -->
+  <div class="product-card">
+    <img src="https://www.formulapk.com/cdn/shop/files/IMG_3013.heic?v=1755167672&width=600" alt="RedBull Tee">
+    <div class="product-info">
+      <h3>RedBull Racing F1 Tee</h3>
+      <div class="price">Rs.2,150</div>
+      <div class="old-price">Rs.3,500</div>
+      <button class="add-cart" onclick="openOrderForm('RedBull Racing F1 Tee')">Buy Now</button>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 AlFati Store. All Rights Reserved.
+</footer>
+
+<!-- ---------------- MODAL ---------------- -->
+<div class="modal" id="orderModal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h2 id="productTitle">Order Form</h2>
+    <form id="orderForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Shipping Address" rows="3" required></textarea>
+      <input type="number" placeholder="Quantity" min="1" value="1" required>
+      <button type="submit">Confirm Order</button>
+    </form>
+    <div class="confirmation" id="confirmationMsg">
+      ✅ Thank you! Your order has been confirmed.
+    </div>
+  </div>
+</div>
+
+<script>
+const modal = document.getElementById("orderModal");
+const closeBtn = document.getElementById("closeModal");
+const orderForm = document.getElementById("orderForm");
+const confirmationMsg = document.getElementById("confirmationMsg");
+const productTitle = document.getElementById("productTitle");
+
+function openOrderForm(productName) {
+  modal.style.display = "block";
+  productTitle.textContent = "Order: " + productName;
+  orderForm.style.display = "block";
+  confirmationMsg.style.display = "none";
+}
+
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if(event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+orderForm.addEventListener("submit", function(e){
+  e.preventDefault();
+  orderForm.style.display = "none";
+  confirmationMsg.style.display = "block";
+});
+</script>
+
+</body>
+</html>
